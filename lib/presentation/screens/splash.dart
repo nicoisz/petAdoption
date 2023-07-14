@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petadoption/presentation/widgets/circle_button.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -49,13 +50,13 @@ class SplashScreen extends StatelessWidget {
               color: Colors.white,
             ),
             child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.pets),
+                CircleButton(iconData: Icons.pets),
                 SizedBox(
-                  width: 5,
+                  width: 10,
                 ),
-                Text('GestureDetector Button')
+                Text('GestureDetector')
               ],
             ),
           ),
