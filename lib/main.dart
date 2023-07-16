@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petadoption/presentation/screens/home.dart';
 import 'package:petadoption/presentation/screens/splash.dart';
+import 'package:petadoption/router/router.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,8 +12,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SplashScreen(),
-    );
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // home: const Listview2Screen(),
+        initialRoute: 'splash',
+        routes: AppRoutes.routes,
+        onGenerateRoute: AppRoutes.onGenerateRoute);
+  
   }
 }
