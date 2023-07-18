@@ -77,7 +77,9 @@ class SplashScreen extends StatelessWidget {
             width: 60,
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+               Navigator.pushNamed(context, 'home');
+            },
             child: Container(
               width: 160,
               height: 50,
@@ -88,6 +90,7 @@ class SplashScreen extends StatelessWidget {
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  //TODO: circle button no agarra el navigator pushnamed
                   CircleButton(iconData: Icons.pets),
                   SizedBox(
                     width: 10,
