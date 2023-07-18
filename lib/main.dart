@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // home: const Listview2Screen(),
         initialRoute: 'splash',
-        theme: ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255)),
+        theme: ThemeData(scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255)),
         routes: AppRoutes.routes,
         onGenerateRoute: AppRoutes.onGenerateRoute);
   

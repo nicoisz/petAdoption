@@ -10,7 +10,7 @@ class AppRoutes {
         route: 'home',
         icon: Icons.home,
         name: 'home',
-        screen: const HomeScreen()),
+        screen: HomeScreen()),
     MenuOptions(
         route: 'splash',
         icon: Icons.build,
@@ -30,12 +30,12 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'splash': (BuildContext context) => const SplashScreen(),
-    'home': (BuildContext context) => const HomeScreen(),
+    'home': (BuildContext context) =>  HomeScreen(),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
-      builder: (context) => const HomeScreen(),
+      builder: (context) =>  HomeScreen(),
     );
   }
 }
