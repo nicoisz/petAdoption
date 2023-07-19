@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petadoption/domain/entities/pets.dart';
+import 'package:petadoption/presentation/widgets/circle_button.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -96,8 +97,16 @@ class HomeScreen extends StatelessWidget {
             child: _CustomChip(animals: animals),
           ),
           SizedBox(
-            height: 400,
+            height: 320,
             child: _CustomPetsList(pets: pets),
+          ),
+          Container(
+            height: 50,
+            child: const CircleButton(
+              iconData: Icons.pets_sharp,
+              buttonText: 'see more',
+              backgroundColor: Color(0xFFb1e0da),
+            ),
           ),
           Container(
             height: 200,

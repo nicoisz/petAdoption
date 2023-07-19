@@ -53,7 +53,9 @@ class SplashScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 5,),
+                SizedBox(
+                  height: 5,
+                ),
                 Text("Encuentra tu mejor futuro compañero")
               ],
             ),
@@ -76,30 +78,11 @@ class SplashScreen extends StatelessWidget {
           const SizedBox(
             width: 60,
           ),
-          GestureDetector(
-            onTap: () {
-               Navigator.pushNamed(context, 'home');
-            },
-            child: Container(
-              width: 160,
-              height: 50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Colors.white,
-              ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  //TODO: circle button no agarra el navigator pushnamed
-                  CircleButton(iconData: Icons.pets),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('Registrarse')
-                ],
-              ),
-            ),
-          ),
+          const CircleButton(
+            iconData: Icons.pets,
+            buttonText: 'Comenzar',
+            backgroundColor: Colors.white,
+          )
         ],
       ),
     );
