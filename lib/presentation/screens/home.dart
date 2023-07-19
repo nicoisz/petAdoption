@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petadoption/domain/entities/pets.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -10,6 +11,29 @@ class HomeScreen extends StatelessWidget {
     'Reptiles',
     'Otros'
   ];
+
+
+
+List<Map<String, dynamic>> pets = [
+  {
+    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'imageUrl': 'assets/images/mascotas/mascota_1.jpg',
+    'price': '63528',
+  },{
+    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'imageUrl': 'assets/images/mascotas/mascota_2.jpg',
+    'price': '86363',
+  },{
+    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'imageUrl': 'assets/images/mascotas/mascota_3.jpg',
+    'price': '75953',
+  },{
+    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'imageUrl': 'assets/images/mascotas/mascota_4.jpg',
+    'price': '23230',
+  }];
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,61 +54,61 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body:ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top:10,left:20.0, right: 15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Hola, Luis ✌🏻",
-                        style: TextStyle(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 0.1,
-                            fontFamily: 'Arial'),
-                      ),
-                      Text("Good Evening!")
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40,
-                    child: OutlinedButton(
-                      onPressed: () {},
-                      child: const Icon(
-                        Icons.search,
-                        color: Colors.black54,
-                      ),
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 10, left: 20.0, right: 15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Hola, Luis ✌🏻",
+                      style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.1,
+                          fontFamily: 'Arial'),
+                    ),
+                    Text("Good Evening!")
+                  ],
+                ),
+                SizedBox(
+                  height: 40,
+                  child: OutlinedButton(
+                    onPressed: () {},
+                    child: const Icon(
+                      Icons.search,
+                      color: Colors.black54,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Container(
-              height: 100,
-              color: Colors.white,
-              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-              child: _CustomChip(animals: animals),
-            ),
-            Container(
-              height: 400,
-              color: Colors.red,
-            ),
-            Container(
-              height: 200,
-              color: Colors.green,
-            ),
-            Container(
-              height: 200,
-              color: Colors.pink,
-            ),
-          ],
-        ),
-      
+          ),
+          Container(
+            height: 100,
+            color: Colors.white,
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+            child: _CustomChip(animals: animals),
+          ),
+          SizedBox(
+            height: 400,
+            child: _CustomPetsList(pets: pets),
+          ),
+          Container(
+            height: 200,
+            color: Colors.green,
+          ),
+          Container(
+            height: 200,
+            color: Colors.pink,
+          ),
+        ],
+      ),
       bottomNavigationBar: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.plus_one),
@@ -117,6 +141,43 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class _CustomPetsList extends StatelessWidget {
+  _CustomPetsList({super.key, required this.pets});
+List<Map<String, dynamic>> pets;  
+
+
+
+  @override
+  Widget build(BuildContext context) {
+   
+    return ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemBuilder: (BuildContext context, int index) {
+
+
+        return Container(
+          color: Colors.red,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+                CircleAvatar(backgroundImage: AssetImage(pets[index]['imageUrl']), radius: 120.0,),
+                Text(pets[index]['description']),
+                Text(pets[index]['price']),
+            
+                
+             
+            ],
+          ),
+        );
+      },
+      itemCount: pets.length,
+      separatorBuilder: (BuildContext context, int index) {
+        return const SizedBox(width: 20);
+      },
+    );
+  }
+}
+
 class _CustomChip extends StatelessWidget {
   const _CustomChip({required this.animals});
 
@@ -128,19 +189,22 @@ class _CustomChip extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
         return Chip(
-            labelPadding: const EdgeInsets.symmetric(horizontal: 10.0),
-            backgroundColor: Colors.white,
-            shape: const StadiumBorder(
-                side: BorderSide(color: Colors.black26, width: 1.0)),
-            label: Text(
-              animals[index],
-              style: const TextStyle(fontWeight: FontWeight.w300),
-            ),
-          );
+          labelPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+          backgroundColor: Colors.white,
+          shape: const StadiumBorder(
+              side: BorderSide(color: Colors.black26, width: 1.0)),
+          label: Text(
+            animals[index],
+            style: const TextStyle(fontWeight: FontWeight.w300),
+          ),
+        );
       },
       itemCount: animals.length,
-      separatorBuilder: (BuildContext context, int index) { return const SizedBox(width: 10,);},
-    
+      separatorBuilder: (BuildContext context, int index) {
+        return const SizedBox(
+          width: 10,
+        );
+      },
     );
   }
 }
