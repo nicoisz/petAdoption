@@ -12,28 +12,28 @@ class HomeScreen extends StatelessWidget {
     'Otros'
   ];
 
-
-
-List<Map<String, dynamic>> pets = [
-  {
-    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    'imageUrl': 'assets/images/mascotas/mascota_1.jpg',
-    'price': '63528',
-  },{
-    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    'imageUrl': 'assets/images/mascotas/mascota_2.jpg',
-    'price': '86363',
-  },{
-    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    'imageUrl': 'assets/images/mascotas/mascota_3.jpg',
-    'price': '75953',
-  },{
-    'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    'imageUrl': 'assets/images/mascotas/mascota_4.jpg',
-    'price': '23230',
-  }];
-
-
+  List<Map<String, dynamic>> pets = [
+    {
+      'description': 'Lorem ipsum dolor sit amet.',
+      'imageUrl': 'assets/images/mascotas/mascota_1.jpg',
+      'price': '63528',
+    },
+    {
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'imageUrl': 'assets/images/mascotas/mascota_2.jpg',
+      'price': '86363',
+    },
+    {
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'imageUrl': 'assets/images/mascotas/mascota_3.jpg',
+      'price': '75953',
+    },
+    {
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'imageUrl': 'assets/images/mascotas/mascota_4.jpg',
+      'price': '23230',
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -142,32 +142,38 @@ List<Map<String, dynamic>> pets = [
 }
 
 class _CustomPetsList extends StatelessWidget {
-  _CustomPetsList({super.key, required this.pets});
-List<Map<String, dynamic>> pets;  
-
-
+  _CustomPetsList({required this.pets});
+  List<Map<String, dynamic>> pets;
 
   @override
   Widget build(BuildContext context) {
-   
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
-
-
-        return Container(
-          color: Colors.red,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-                CircleAvatar(backgroundImage: AssetImage(pets[index]['imageUrl']), radius: 120.0,),
-                Text(pets[index]['description']),
-                Text(pets[index]['price']),
-            
-                
-             
-            ],
-          ),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage(pets[index]['imageUrl']),
+              radius: 120.0,
+            ),
+            SizedBox(
+              width: 250.0,
+              child: Column(
+                children: [
+                  Text(
+                    pets[index]['description'],
+                    style: const TextStyle(fontSize: 14.0),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '\$${pets[index]['price']}',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          ],
         );
       },
       itemCount: pets.length,
