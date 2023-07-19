@@ -1,11 +1,15 @@
-
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  
   HomeScreen({super.key});
-  final List<String> animals = ['Perros','Gatos','Pajaros','Acuaticos','Reptiles','Otros'];
-
+  final List<String> animals = [
+    'Perros',
+    'Gatos',
+    'Pajaros',
+    'Acuaticos',
+    'Reptiles',
+    'Otros'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class HomeScreen extends StatelessWidget {
         //TODO obtener imagen de perfil desde firebase
         actions: const [
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.only(right: 15.0),
             child: CircleAvatar(
               backgroundImage: NetworkImage(
                   'https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png'),
@@ -26,59 +30,61 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      body:ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top:10,left:20.0, right: 15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Hola, Luis ✌🏻",
-                    style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.1,
-                        fontFamily: 'Arial'),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Hola, Luis ✌🏻",
+                        style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.1,
+                            fontFamily: 'Arial'),
+                      ),
+                      Text("Good Evening!")
+                    ],
                   ),
-                  Text("Good Evening!")
+                  SizedBox(
+                    height: 40,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: const Icon(
+                        Icons.search,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(
-                height: 40,
-                child: OutlinedButton(
-                  onPressed: () {},
-                  child: const Icon(
-                    Icons.search,
-                    color: Colors.black54,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Container(
-            height: 80,
-            color: Colors.white,
-            padding: const EdgeInsets.all(20.0),
-            child: 
-             _CustomChip(animals: animals),
-            
-          ),
-          Container(
-            height: 200,
-            color: Colors.red,
-          ),
-          Container(
-            height: 200,
-            color: Colors.green,
-          ),
-          Container(
-            height: 200,
-            color: Colors.pink,
-          ),
-        ],
-      ),
+            ),
+            Container(
+              height: 100,
+              color: Colors.white,
+              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+              child: _CustomChip(animals: animals),
+            ),
+            Container(
+              height: 400,
+              color: Colors.red,
+            ),
+            Container(
+              height: 200,
+              color: Colors.green,
+            ),
+            Container(
+              height: 200,
+              color: Colors.pink,
+            ),
+          ],
+        ),
+      
       bottomNavigationBar: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.plus_one),
@@ -112,26 +118,29 @@ class HomeScreen extends StatelessWidget {
 }
 
 class _CustomChip extends StatelessWidget {
-  final List<String> animals;
-  _CustomChip({required this.animals});
-  
+  const _CustomChip({required this.animals});
 
+  final List<String> animals;
 
   @override
-  
   Widget build(BuildContext context) {
-    var animals;
-    return ListView(
+    return ListView.separated(
       scrollDirection: Axis.horizontal,
-      children: [ ...animals.map((e)=> Chip(
-        backgroundColor: Colors.white,
-        shape:const StadiumBorder(side: BorderSide(color: Colors.black26, width: 1.0)),
-        label: Text(
-          e,
-          style:const TextStyle(fontWeight: FontWeight.w300),
-        ),),
-      ),
-      const SizedBox(width: 200,)]
+      itemBuilder: (BuildContext context, int index) {
+        return Chip(
+            labelPadding: const EdgeInsets.symmetric(horizontal: 10.0),
+            backgroundColor: Colors.white,
+            shape: const StadiumBorder(
+                side: BorderSide(color: Colors.black26, width: 1.0)),
+            label: Text(
+              animals[index],
+              style: const TextStyle(fontWeight: FontWeight.w300),
+            ),
+          );
+      },
+      itemCount: animals.length,
+      separatorBuilder: (BuildContext context, int index) { return const SizedBox(width: 10,);},
+    
     );
   }
 }
