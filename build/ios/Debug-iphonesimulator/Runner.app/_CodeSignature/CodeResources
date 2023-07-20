@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		k8n4XcPB2BTEIds/WpAeTZtbFgc=
+		zxrNukEhVROh9ygXMO6V+Tmd8vY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		cQ5BRzDAht9QAihIRlrJn4dBbM8=
+		PiuEUA5e89MTcEAORzt/kR/K7/A=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		wUTP0CqiitiZEOFtvZg1L/Lq0bg=
+		dPO+L9PkDSsmzdAqK3Js93dDgJE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/mascotas/mascota_1.jpg</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Wvfb3zLNsrMQTI9aGTqf7QuZng0=
+		ncxd83ubbZ7xlo/olVie3OqzKmI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -285,7 +285,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/9neVOrTGOyNkok/J+DI9a6paa1PNllf3/znBvFJwME=
+			i/y7rjxh5LZX3mbrhZ8ofUFpu9/6wW6PKrikquaQF38=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -299,7 +299,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iiZtWqxMQY7iJN0m/h7Nk6fDfNYip4FQrIsC71e/lig=
+			BH9FVYkQeAtioW36BZfqYs3LA9RsmLkHSdvYpxIAnKk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -327,7 +327,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ffGq/FYWe9oqFOKvjkTasgQ2dcXzH3am/a/1oeY/eZw=
+			oGN+qjm3Wn6BHDd3/oKprupGVQq8hnoIJwzzqAgBz08=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/mascotas/mascota_1.jpg</key>
@@ -390,7 +390,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iRbW4BUthmnoLHTEuJV+grBgyHGhQwWXvGpVYUtf2xk=
+			2GEAacTRN7LzX8yMvCRUR0HQjOdAkKUdq21HpDghHYE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>

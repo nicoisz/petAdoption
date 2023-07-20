@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:petadoption/domain/entities/pets.dart';
 import 'package:petadoption/presentation/widgets/circle_button.dart';
 
+import '../widgets/bottom_navigation.dart';
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final List<String> animals = [
@@ -17,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     {
       'description': 'Lorem ipsum dolor sit amet.',
       'imageUrl': 'assets/images/mascotas/mascota_1.jpg',
-      'price': '63528',
+      'price': 'Adoptame',
     },
     {
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -39,6 +41,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         elevation: 0,
         foregroundColor: Colors.black,
@@ -66,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Hola, Luis ✌🏻",
+                      "Hola, Nicolas ✌🏻",
                       style: TextStyle(
                           fontSize: 28,
                           fontWeight: FontWeight.w500,
@@ -100,13 +103,15 @@ class HomeScreen extends StatelessWidget {
             height: 320,
             child: _CustomPetsList(pets: pets),
           ),
-          Container(
-            height: 50,
-            child: const CircleButton(
-              iconData: Icons.pets_sharp,
-              buttonText: 'see more',
-              backgroundColor: Color(0xFFb1e0da),
-            ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleButton(
+                iconData: Icons.pets_sharp,
+                buttonText: 'see more',
+                backgroundColor: Color(0xFFb1e0da),
+              ),
+            ],
           ),
           Container(
             height: 200,
@@ -118,10 +123,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.plus_one),
-      ),
+      bottomNavigationBar: BottomMenuNavigation(),
       drawer: Drawer(
         child: ListView(
           children: const <Widget>[
@@ -159,12 +161,17 @@ class _CustomPetsList extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
+        final price = (pets[index]['description'] == 'Adoptame') ? '\$' : '';
+
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             CircleAvatar(
               backgroundImage: AssetImage(pets[index]['imageUrl']),
               radius: 120.0,
+            ),
+            const SizedBox(
+              height: 10,
             ),
             SizedBox(
               width: 250.0,
@@ -176,7 +183,7 @@ class _CustomPetsList extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    '\$${pets[index]['price']}',
+                    '${price}${pets[index]['price']}',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
