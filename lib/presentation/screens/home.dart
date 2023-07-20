@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:petadoption/domain/entities/pets.dart';
 import 'package:petadoption/presentation/widgets/circle_button.dart';
 
 import '../widgets/bottom_navigation.dart';
@@ -123,7 +122,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomMenuNavigation(),
+      bottomNavigationBar: const BottomMenuNavigation(),
       drawer: Drawer(
         child: ListView(
           children: const <Widget>[
@@ -161,7 +160,7 @@ class _CustomPetsList extends StatelessWidget {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index) {
-        final price = (pets[index]['description'] == 'Adoptame') ? '\$' : '';
+        final price = (pets[index]['price'] == 'Adoptame') ? '' : '\$';
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -183,7 +182,7 @@ class _CustomPetsList extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    '${price}${pets[index]['price']}',
+                    '$price${pets[index]['price']}',
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
