@@ -7,15 +7,27 @@ class AppRoutes {
 
   static final menuOptions = <MenuOptions>[
     MenuOptions(
-        route: 'home',
-        icon: Icons.home,
-        name: 'home',
-        screen: HomeScreen()),
+        route: 'home', icon: Icons.home, name: 'home', screen: HomeScreen()),
     MenuOptions(
         route: 'splash',
         icon: Icons.build,
         name: 'splash',
-        screen: const SplashScreen())
+        screen: const SplashScreen()),
+    MenuOptions(
+        route: 'liked',
+        icon: Icons.favorite_sharp,
+        name: 'liked',
+        screen: const LikedScreen()),
+    MenuOptions(
+        route: 'profile',
+        icon: Icons.person_2,
+        name: 'profile',
+        screen: const ProfileScreen()),
+    MenuOptions(
+        route: 'detail',
+        icon: Icons.person_2,
+        name: 'detail',
+        screen: const DetailScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
@@ -30,12 +42,15 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> routes = {
     'splash': (BuildContext context) => const SplashScreen(),
-    'home': (BuildContext context) =>  HomeScreen(),
+    'home': (BuildContext context) => HomeScreen(),
+    'liked': (BuildContext context) => const LikedScreen(),
+    'profile': (BuildContext context) => const ProfileScreen(),
+    'detail': (BuildContext context) => const DetailScreen(),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
-      builder: (context) =>  HomeScreen(),
+      builder: (context) => HomeScreen(),
     );
   }
 }

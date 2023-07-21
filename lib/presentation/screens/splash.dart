@@ -26,7 +26,7 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ),
                 Image.asset(
-                  'assets/images/slide-2.png',
+                  'assets/images/splash_screen/1.png',
                   height: 200,
                   width: 300,
                   alignment: Alignment.bottomRight,
@@ -82,6 +82,7 @@ class SplashScreen extends StatelessWidget {
             iconData: Icons.pets,
             buttonText: 'Comenzar',
             backgroundColor: Colors.white,
+            route: 'home',
           )
         ],
       ),

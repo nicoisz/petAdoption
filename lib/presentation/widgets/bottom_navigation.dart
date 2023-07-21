@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 class BottomMenuNavigation extends StatefulWidget {
-  const BottomMenuNavigation({super.key});
-
+  const BottomMenuNavigation({super.key, required this.indexPage});
+  final int indexPage;
   @override
   State<BottomMenuNavigation> createState() => _BottomMenuNavigationState();
 }
 
 class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
-  var currentIndex = 0;
+  var currentIndex;
+  @override
+  void initState() {
+    // TODO: implement initState
+    currentIndex = widget.indexPage;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +41,13 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
             setState(
               () {
                 currentIndex = index;
+                if (currentIndex == 0) {
+                  Navigator.pushNamed(context, 'home');
+                } else if (currentIndex == 1) {
+                  Navigator.pushNamed(context, 'liked');
+                } else {
+                  Navigator.pushNamed(context, 'profile');
+                }
               },
             );
           },
@@ -75,7 +88,7 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
 
   List<IconData> listOfIcons = [
     Icons.home_rounded,
-    Icons.favorite_rounded,
+    Icons.pets_outlined,
     Icons.person_rounded,
   ];
 }

@@ -17,24 +17,30 @@ class HomeScreen extends StatelessWidget {
   List<Map<String, dynamic>> pets = [
     {
       'description': 'Lorem ipsum dolor sit amet.',
-      'imageUrl': 'assets/images/mascotas/mascota_1.jpg',
+      'imageUrl': 'assets/images/home_pets_slide/1.jpg',
       'price': 'Adoptame',
     },
     {
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'imageUrl': 'assets/images/mascotas/mascota_2.jpg',
+      'imageUrl': 'assets/images/home_pets_slide/2.jpg',
       'price': '86363',
     },
     {
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'imageUrl': 'assets/images/mascotas/mascota_3.jpg',
+      'imageUrl': 'assets/images/home_pets_slide/3.jpg',
       'price': '75953',
     },
     {
       'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'imageUrl': 'assets/images/mascotas/mascota_4.jpg',
+      'imageUrl': 'assets/images/home_pets_slide/4.jpg',
       'price': '23230',
     }
+  ];
+
+  final List<String> categories = [
+    'assets/images/home_categories_slide/1.jpeg',
+    'assets/images/home_categories_slide/2.png',
+    'assets/images/home_categories_slide/3.png',
   ];
 
   @override
@@ -109,20 +115,23 @@ class HomeScreen extends StatelessWidget {
                 iconData: Icons.pets_sharp,
                 buttonText: 'see more',
                 backgroundColor: Color(0xFFb1e0da),
+                route: 'detail',
               ),
             ],
           ),
-          Container(
-            height: 200,
-            color: Colors.green,
-          ),
-          Container(
-            height: 200,
-            color: Colors.pink,
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                _CustomCategories(categories: categories),
+              ],
+            ),
           ),
         ],
       ),
-      bottomNavigationBar: const BottomMenuNavigation(),
+      bottomNavigationBar: const BottomMenuNavigation(
+        indexPage: 0,
+      ),
       drawer: Drawer(
         child: ListView(
           children: const <Widget>[
@@ -221,6 +230,42 @@ class _CustomChip extends StatelessWidget {
         );
       },
       itemCount: animals.length,
+      separatorBuilder: (BuildContext context, int index) {
+        return const SizedBox(
+          width: 10,
+        );
+      },
+    );
+  }
+}
+
+class _CustomCategories extends StatelessWidget {
+  final List<String> categories;
+
+  const _CustomCategories({super.key, required this.categories});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      padding: const EdgeInsets.all(20),
+      scrollDirection: Axis.horizontal,
+      itemBuilder: (BuildContext context, int index) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text("data"),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              width: 300,
+              color: Colors.white,
+              child: Image.asset(categories[index]),
+            ),
+          ],
+        );
+      },
+      itemCount: 3,
       separatorBuilder: (BuildContext context, int index) {
         return const SizedBox(
           width: 10,

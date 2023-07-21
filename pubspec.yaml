@@ -19,5 +19,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
-    - assets/images/mascotas/
+    - assets/images/home_categories_slide/
+    - assets/images/home_pets_slide/
+    - assets/images/splash_screen/

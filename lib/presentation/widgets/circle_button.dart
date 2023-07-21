@@ -4,12 +4,14 @@ class CircleButton extends StatelessWidget {
   final IconData iconData;
   final String buttonText;
   final Color backgroundColor;
+  final String route;
 
   const CircleButton(
       {Key? key,
       required this.iconData,
       required this.buttonText,
-      required this.backgroundColor})
+      required this.backgroundColor,
+      required this.route})
       : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class CircleButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'home');
+        Navigator.pushNamed(context, route);
       },
       child: Container(
         width: 160,

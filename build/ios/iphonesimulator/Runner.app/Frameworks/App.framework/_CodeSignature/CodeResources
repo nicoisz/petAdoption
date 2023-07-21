@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		c8/QNcV6lXEbi9f7/liLgZynsmM=
+		PQ4IUzcRVTiWVCGYxnA6PR6S14g=
 		</data>
 		<key>flutter_assets/AssetManifest.smcbin</key>
 		<data>
-		fPzR1mxojrvix6isiWY51flo2QI=
+		dBYlvYKo+c0t4KIOFpT0wa2etHo=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -23,6 +23,34 @@
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
 		wUTP0CqiitiZEOFtvZg1L/Lq0bg=
+		</data>
+		<key>flutter_assets/assets/images/home_categories_slide/1.jpeg</key>
+		<data>
+		Ec6itgIp4PMrGuI8m0e1frSD5TI=
+		</data>
+		<key>flutter_assets/assets/images/home_categories_slide/2.png</key>
+		<data>
+		JRhkCFYMx2C5Uhz7BrJIVUTuzc8=
+		</data>
+		<key>flutter_assets/assets/images/home_categories_slide/3.png</key>
+		<data>
+		HHZvYDGljPFMRNHXII7mytifbrg=
+		</data>
+		<key>flutter_assets/assets/images/home_pets_slide/1.jpg</key>
+		<data>
+		DTsFbNng1jvh4dBA6lVPiSu7i4k=
+		</data>
+		<key>flutter_assets/assets/images/home_pets_slide/2.jpg</key>
+		<data>
+		pLffiA0zOxVc41zqPoDvw3ieNwU=
+		</data>
+		<key>flutter_assets/assets/images/home_pets_slide/3.jpg</key>
+		<data>
+		VQsQL41ht5LqQej1ETUdz8H6fMk=
+		</data>
+		<key>flutter_assets/assets/images/home_pets_slide/4.jpg</key>
+		<data>
+		TtXcgxlrIkzAEqQz+YhJuzi3et0=
 		</data>
 		<key>flutter_assets/assets/images/mascotas/mascota_1.jpg</key>
 		<data>
@@ -48,6 +76,10 @@
 		<data>
 		qcW8VHy1IEECMDnnV7cdKtpj7kA=
 		</data>
+		<key>flutter_assets/assets/images/splash_screen/1.png</key>
+		<data>
+		qcW8VHy1IEECMDnnV7cdKtpj7kA=
+		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
 		/CUoTuPQqqdexfyOT9lpJhV+2MQ=
@@ -58,7 +90,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		7zlHow8Q9PTIlOuGG0bGlJFv8UM=
+		tOwJHvtywvqMHqgvG/5xrYX2XdQ=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -75,14 +107,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gYjpkOcaaEonUxYh3lGLw8612Toi0/intmdWG9XBmuM=
+			8WMSwv5eEs8Aj9cdowvaYcu0dCUbay0cz+gpQos3EBk=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.smcbin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			08htA2HSxUsChTwZ7usRuYLCKCR9savgTBQqyImu+9Q=
+			jwvcg6g76gKxcbDx7cdwJt/NvacOJSpP0o0ZN1yacME=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -97,6 +129,55 @@
 			<key>hash2</key>
 			<data>
 			ffGq/FYWe9oqFOKvjkTasgQ2dcXzH3am/a/1oeY/eZw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_categories_slide/1.jpeg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ivreryDFuQR7fEJVvqZ3LTr5mBSWVv1CckZpoWqrIKU=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_categories_slide/2.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+TMvrepVisC0DoZjHW5yRMxOmMpSYT+nhrniTVgFWMU=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_categories_slide/3.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+JGp4t0Rj4IHFVy5MuA1NdXsvseiccLdSfWNBSW/VlI=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_pets_slide/1.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xx3ywA/gTSAch+K5/7dbd3Us5K8mRcLAiCjikzkeh4k=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_pets_slide/2.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6AXBo+XBcY8fVIW7Icc6hpuUogY+/cyGJ/IfLmqq/AI=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_pets_slide/3.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tHMRxHOfYW3mc1z2YFCqiOPm+Wiy1DtE7fUU83l4o0o=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/home_pets_slide/4.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LVcbHyrLMVbbL/wlDzbrpVqbiyY5JfMOCj38JoV5pnU=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/mascotas/mascota_1.jpg</key>
@@ -141,6 +222,13 @@
 			g2k4uVMEGGmj9Pf1BjyLA0FZLHF1VXu1ti2caHY+zTI=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/splash_screen/1.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			g2k4uVMEGGmj9Pf1BjyLA0FZLHF1VXu1ti2caHY+zTI=
+			</data>
+		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<dict>
 			<key>hash2</key>
@@ -159,7 +247,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uVxeZsWslm7FoGFKJna7b4XSHTkXsuLDIkcsukP03Ck=
+			5uJrNJCD/KvwTzvKV1A2E21OGs64HW0c63w3klOa/ME=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
