@@ -26,7 +26,7 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
         color: Colors.transparent,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(.15),
+            color: Colors.black.withOpacity(.5),
             offset: const Offset(0, 0),
           )
         ],
@@ -76,7 +76,9 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
               Icon(
                 listOfIcons[index],
                 size: size.width * .076,
-                color: index == currentIndex ? Colors.white : Colors.black38,
+                color: index == currentIndex
+                    ? Colors.white
+                    : const Color.fromARGB(255, 116, 183, 174),
               ),
               SizedBox(height: size.width * .03),
             ],

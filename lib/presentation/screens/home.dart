@@ -37,10 +37,19 @@ class HomeScreen extends StatelessWidget {
     }
   ];
 
-  final List<String> categories = [
-    'assets/images/home_categories_slide/1.jpeg',
-    'assets/images/home_categories_slide/2.png',
-    'assets/images/home_categories_slide/3.png',
+  List<Map<String, dynamic>> categories = [
+    {
+      'title': 'Juguetes',
+      'imageUrl': 'assets/images/home_categories_slide/1.jpeg'
+    },
+    {
+      'title': 'Comida',
+      'imageUrl': 'assets/images/home_categories_slide/2.png'
+    },
+    {
+      'title': 'Veterinarios',
+      'imageUrl': 'assets/images/home_categories_slide/3.png'
+    },
   ];
 
   @override
@@ -120,10 +129,33 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: SizedBox(
-              height: 300,
-              child: _CustomCategories(categories: categories),
+            padding: const EdgeInsets.symmetric(vertical: 30.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Categories",
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "See all",
+                        style: TextStyle(
+                            fontSize: 14, decoration: TextDecoration.underline),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 300,
+                  child: _CustomCategories(categories: categories),
+                ),
+              ],
             ),
           ),
         ],
@@ -239,20 +271,38 @@ class _CustomChip extends StatelessWidget {
 }
 
 class _CustomCategories extends StatelessWidget {
-  final List<String> categories;
-
-  const _CustomCategories({super.key, required this.categories});
+  _CustomCategories({super.key, required this.categories});
+  List<Map<String, dynamic>> categories;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {
-          return Image.asset(categories[index]);
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                categories[index]['title'],
+                style: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Image.asset(
+                categories[index]['imageUrl'],
+                height: 200,
+                width: 250,
+              ),
+            ],
+          );
         },
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(
-            width: 10,
+            width: 20,
           );
         },
         itemCount: 3);
