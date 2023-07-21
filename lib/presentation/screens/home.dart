@@ -119,12 +119,11 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                _CustomCategories(categories: categories),
-              ],
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            child: SizedBox(
+              height: 300,
+              child: _CustomCategories(categories: categories),
             ),
           ),
         ],
@@ -247,30 +246,15 @@ class _CustomCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.all(20),
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (BuildContext context, int index) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text("data"),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              width: 300,
-              color: Colors.white,
-              child: Image.asset(categories[index]),
-            ),
-          ],
-        );
-      },
-      itemCount: 3,
-      separatorBuilder: (BuildContext context, int index) {
-        return const SizedBox(
-          width: 10,
-        );
-      },
-    );
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+          return Image.asset(categories[index]);
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(
+            width: 10,
+          );
+        },
+        itemCount: 3);
   }
 }

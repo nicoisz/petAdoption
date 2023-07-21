@@ -52,30 +52,6 @@
 		<data>
 		TtXcgxlrIkzAEqQz+YhJuzi3et0=
 		</data>
-		<key>flutter_assets/assets/images/mascotas/mascota_1.jpg</key>
-		<data>
-		DTsFbNng1jvh4dBA6lVPiSu7i4k=
-		</data>
-		<key>flutter_assets/assets/images/mascotas/mascota_2.jpg</key>
-		<data>
-		pLffiA0zOxVc41zqPoDvw3ieNwU=
-		</data>
-		<key>flutter_assets/assets/images/mascotas/mascota_3.jpg</key>
-		<data>
-		VQsQL41ht5LqQej1ETUdz8H6fMk=
-		</data>
-		<key>flutter_assets/assets/images/mascotas/mascota_4.jpg</key>
-		<data>
-		TtXcgxlrIkzAEqQz+YhJuzi3et0=
-		</data>
-		<key>flutter_assets/assets/images/slide-1.png</key>
-		<data>
-		MylDEqAb3YQUtkwE3oCDVI8w4eQ=
-		</data>
-		<key>flutter_assets/assets/images/slide-2.png</key>
-		<data>
-		qcW8VHy1IEECMDnnV7cdKtpj7kA=
-		</data>
 		<key>flutter_assets/assets/images/splash_screen/1.png</key>
 		<data>
 		qcW8VHy1IEECMDnnV7cdKtpj7kA=
@@ -90,7 +66,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		tOwJHvtywvqMHqgvG/5xrYX2XdQ=
+		hTETpvaayFI6wZ1kaOgoH9DIhYc=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -180,48 +156,6 @@
 			LVcbHyrLMVbbL/wlDzbrpVqbiyY5JfMOCj38JoV5pnU=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/images/mascotas/mascota_1.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xx3ywA/gTSAch+K5/7dbd3Us5K8mRcLAiCjikzkeh4k=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/mascotas/mascota_2.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			6AXBo+XBcY8fVIW7Icc6hpuUogY+/cyGJ/IfLmqq/AI=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/mascotas/mascota_3.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			tHMRxHOfYW3mc1z2YFCqiOPm+Wiy1DtE7fUU83l4o0o=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/mascotas/mascota_4.jpg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			LVcbHyrLMVbbL/wlDzbrpVqbiyY5JfMOCj38JoV5pnU=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/slide-1.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			vmK9IWZGAV3aUjpr6S5v+qJKZ48jBeW+8JAoa/og3Yc=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/images/slide-2.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			g2k4uVMEGGmj9Pf1BjyLA0FZLHF1VXu1ti2caHY+zTI=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/images/splash_screen/1.png</key>
 		<dict>
 			<key>hash2</key>
@@ -247,7 +181,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5uJrNJCD/KvwTzvKV1A2E21OGs64HW0c63w3klOa/ME=
+			Uv7pc5zpz3aWjRwLZ1Np3OPgN5rt/mLkU4b4eXc7KbU=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
