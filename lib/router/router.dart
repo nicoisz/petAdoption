@@ -22,7 +22,9 @@ class AppRoutes {
         route: 'detail',
         icon: Icons.person_2,
         name: 'detail',
-        screen: const DetailScreen())
+        screen: const DetailScreen(
+          pets: {},
+        ))
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
@@ -39,7 +41,9 @@ class AppRoutes {
     'splash': (BuildContext context) => const SplashScreen(),
     'home': (BuildContext context) => HomeScreen(),
     'profile': (BuildContext context) => const ProfileScreen(),
-    'detail': (BuildContext context) => const DetailScreen(),
+    'detail': (BuildContext context) => const DetailScreen(
+          pets: {},
+        ),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

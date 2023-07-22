@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petadoption/presentation/screens/screens.dart';
 import 'package:petadoption/presentation/widgets/circle_button.dart';
 
 import '../widgets/bottom_navigation.dart';
@@ -207,7 +208,11 @@ class _CustomPetsList extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, 'detail');
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(pets: pets[index]),
+                  ),
+                );
               }, // Image tapped
               splashColor: Colors.white10, // Splash color over image
               child: CircleAvatar(
