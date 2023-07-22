@@ -37,14 +37,35 @@ class DetailScreen extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              left: 15.0,
-              top: 50,
+              left: width * 0.04,
+              top: height * 0.05,
               child: CircleAvatar(
                 backgroundImage: AssetImage(pets['imageUrl']),
                 radius: 180.0,
               ),
             ),
-            const Positioned(top: 380.0, child: MyArc()),
+            Positioned(
+              top: height * 0.45,
+              child: const MyArc(),
+            ),
+            Positioned(
+              top: height * 0.45,
+              left: width * 0.3,
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2,
+                  ),
+                ),
+                child: const Text(
+                  'some text here',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
             Positioned(
               top: height * 0.62,
               child: Container(
