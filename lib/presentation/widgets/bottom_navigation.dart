@@ -44,7 +44,7 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
                 if (currentIndex == 0) {
                   Navigator.pushNamed(context, 'home');
                 } else if (currentIndex == 1) {
-                  Navigator.pushNamed(context, 'liked');
+                  Navigator.pushNamed(context, 'detail');
                 } else {
                   Navigator.pushNamed(context, 'profile');
                 }

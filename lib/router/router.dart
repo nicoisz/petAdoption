@@ -14,11 +14,6 @@ class AppRoutes {
         name: 'splash',
         screen: const SplashScreen()),
     MenuOptions(
-        route: 'liked',
-        icon: Icons.favorite_sharp,
-        name: 'liked',
-        screen: const LikedScreen()),
-    MenuOptions(
         route: 'profile',
         icon: Icons.person_2,
         name: 'profile',
@@ -43,7 +38,6 @@ class AppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
     'splash': (BuildContext context) => const SplashScreen(),
     'home': (BuildContext context) => HomeScreen(),
-    'liked': (BuildContext context) => const LikedScreen(),
     'profile': (BuildContext context) => const ProfileScreen(),
     'detail': (BuildContext context) => const DetailScreen(),
   };

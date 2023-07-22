@@ -152,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 300,
+                  height: 250,
                   child: _CustomCategories(categories: categories),
                 ),
               ],
@@ -205,9 +205,15 @@ class _CustomPetsList extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage(pets[index]['imageUrl']),
-              radius: 120.0,
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, 'detail');
+              }, // Image tapped
+              splashColor: Colors.white10, // Splash color over image
+              child: CircleAvatar(
+                backgroundImage: AssetImage(pets[index]['imageUrl']),
+                radius: 120.0,
+              ),
             ),
             const SizedBox(
               height: 10,
