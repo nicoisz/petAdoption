@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:petadoption/presentation/widgets/arc.dart';
+import 'package:petadoption/presentation/widgets/left_rectangle.dart';
 
 import '../widgets/bottom_navigation.dart';
 import '../widgets/oval.dart';
@@ -53,19 +55,82 @@ class DetailScreen extends StatelessWidget {
               top: height * 0.46,
               left: width * 0.45,
               child: CustomPaint(
-                size: Size(
-                    width * 1.4,
-                    (width * 0.99)
-                        .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
-                painter: RPSCustomPainter(),
+                size: Size(width * 1.25, (width * .9).toDouble()),
+                painter: OvalCustomPainter(),
               ),
             ),
+            Positioned(
+                top: height * 0.48,
+                left: width / 5,
+                child: const Column(
+                  children: [
+                    Icon(
+                      Icons.pets,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
+                    SizedBox(
+                      height: 5.0,
+                    ),
+                    Text(
+                      "data",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                )),
+            Positioned(
+                top: height * 0.48,
+                left: width * 0.7,
+                child: const Column(
+                  children: [
+                    Icon(
+                      Icons.pets,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
+                    SizedBox(
+                      height: 5.0,
+                    ),
+                    Text(
+                      "data",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                )),
+            Positioned(
+                top: height * 0.53,
+                left: width * 0.45,
+                child: const Text(
+                  "Neat",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                )),
+            Positioned(
+                top: height * 0.48,
+                left: width * 0.44,
+                child: const Icon(Icons.star)),
+            Positioned(
+                top: height * 0.48,
+                left: width * 0.5,
+                child: const Icon(Icons.star)),
+            Positioned(
+                top: height * 0.44,
+                left: width * 0.47,
+                child: const Icon(Icons.star)),
             Positioned(
               top: height * 0.62,
               child: Container(
                 height: 350,
                 width: 400,
                 color: Colors.black,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "data",
+                      style: TextStyle(color: Colors.white),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
