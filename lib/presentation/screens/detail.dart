@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:petadoption/presentation/widgets/arc.dart';
 
 import '../widgets/bottom_navigation.dart';
+import '../widgets/oval.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key, required this.pets});
@@ -49,21 +50,14 @@ class DetailScreen extends StatelessWidget {
               child: const MyArc(),
             ),
             Positioned(
-              top: height * 0.45,
-              left: width * 0.3,
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 2,
-                  ),
-                ),
-                child: const Text(
-                  'some text here',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
+              top: height * 0.46,
+              left: width * 0.45,
+              child: CustomPaint(
+                size: Size(
+                    width * 1.4,
+                    (width * 0.99)
+                        .toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
+                painter: RPSCustomPainter(),
               ),
             ),
             Positioned(
