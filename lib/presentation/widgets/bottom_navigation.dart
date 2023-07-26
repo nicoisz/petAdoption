@@ -35,7 +35,7 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
       child: ListView.builder(
         itemCount: listOfIcons.length,
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: size.width * .2),
+        padding: EdgeInsets.symmetric(horizontal: size.width * .1),
         itemBuilder: (context, index) => InkWell(
           onTap: () {
             setState(
@@ -44,7 +44,7 @@ class _BottomMenuNavigationState extends State<BottomMenuNavigation> {
                 if (currentIndex == 0) {
                   Navigator.pushNamed(context, 'home');
                 } else if (currentIndex == 1) {
-                  Navigator.pushNamed(context, 'detail');
+                  Navigator.pushNamed(context, 'liked');
                 } else {
                   Navigator.pushNamed(context, 'profile');
                 }

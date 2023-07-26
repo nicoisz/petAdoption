@@ -185,8 +185,20 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const BottomMenuNavigation(
-        indexPage: 1,
+      bottomNavigationBar: const Row(
+        children: [
+          SizedBox(
+            width: 40,
+          ),
+          Expanded(
+            child: BottomMenuNavigation(
+              indexPage: 1,
+            ),
+          ),
+          SizedBox(
+            width: 40,
+          ),
+        ],
       ),
     );
   }

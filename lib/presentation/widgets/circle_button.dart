@@ -34,7 +34,6 @@ class CircleButton extends StatelessWidget {
           children: [
             //TODO: circle button no agarra el navigator pushnamed
             InkResponse(
-              onTap: () {},
               child: Container(
                 margin: const EdgeInsets.all(2.0),
                 width: size,

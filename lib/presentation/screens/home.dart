@@ -161,8 +161,20 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BottomMenuNavigation(
-        indexPage: 0,
+      bottomNavigationBar: const Row(
+        children: [
+          SizedBox(
+            width: 40,
+          ),
+          Expanded(
+            child: BottomMenuNavigation(
+              indexPage: 0,
+            ),
+          ),
+          SizedBox(
+            width: 40,
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
