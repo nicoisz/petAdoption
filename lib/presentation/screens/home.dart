@@ -3,6 +3,10 @@ import 'package:petadoption/presentation/screens/screens.dart';
 import 'package:petadoption/presentation/widgets/circle_button.dart';
 
 import '../widgets/bottom_navigation.dart';
+import '../widgets/custom_categories.dart';
+import '../widgets/custom_chip.dart';
+import '../widgets/custom_pet_list.dart';
+import '../widgets/side_menu.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -112,11 +116,11 @@ class HomeScreen extends StatelessWidget {
             color: Colors.white,
             padding:
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-            child: _CustomChip(animals: animals),
+            child: CustomChip(animals: animals),
           ),
           SizedBox(
             height: 320,
-            child: _CustomPetsList(pets: pets),
+            child: CustomPetsList(pets: pets),
           ),
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -154,7 +158,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 250,
-                  child: _CustomCategories(categories: categories),
+                  child: CustomCategories(categories: categories),
                 ),
               ],
             ),
@@ -176,158 +180,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: const <Widget>[
-            SizedBox(
-              height: 80,
-              child: DrawerHeader(
-                child: Text(
-                  'Adoptar App',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-            ),
-            ListTile(
-              title: Text('Item 1'),
-            ),
-            ListTile(
-              title: Text('Item 2'),
-            ),
-          ],
-        ),
-      ),
+      drawer: const SideMenu(),
     );
-  }
-}
-
-class _CustomPetsList extends StatelessWidget {
-  _CustomPetsList({required this.pets});
-  List<Map<String, dynamic>> pets;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (BuildContext context, int index) {
-        final price = (pets[index]['price'] == 'Adoptame') ? '' : '\$';
-
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => DetailScreen(pets: pets[index]),
-                  ),
-                );
-              }, // Image tapped
-              splashColor: Colors.white10, // Splash color over image
-              child: CircleAvatar(
-                backgroundImage: AssetImage(pets[index]['imageUrl']),
-                radius: 120.0,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              width: 250.0,
-              child: Column(
-                children: [
-                  Text(
-                    pets[index]['description'],
-                    style: const TextStyle(fontSize: 14.0),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    '$price${pets[index]['price']}',
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        );
-      },
-      itemCount: pets.length,
-      separatorBuilder: (BuildContext context, int index) {
-        return const SizedBox(width: 20);
-      },
-    );
-  }
-}
-
-class _CustomChip extends StatelessWidget {
-  const _CustomChip({required this.animals});
-
-  final List<String> animals;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-      scrollDirection: Axis.horizontal,
-      itemBuilder: (BuildContext context, int index) {
-        return Chip(
-          labelPadding: const EdgeInsets.symmetric(horizontal: 10.0),
-          backgroundColor: Colors.white,
-          shape: const StadiumBorder(
-              side: BorderSide(color: Colors.black26, width: 1.0)),
-          label: Text(
-            animals[index],
-            style: const TextStyle(fontWeight: FontWeight.w300),
-          ),
-        );
-      },
-      itemCount: animals.length,
-      separatorBuilder: (BuildContext context, int index) {
-        return const SizedBox(
-          width: 10,
-        );
-      },
-    );
-  }
-}
-
-class _CustomCategories extends StatelessWidget {
-  _CustomCategories({super.key, required this.categories});
-  List<Map<String, dynamic>> categories;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (BuildContext context, int index) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                categories[index]['title'],
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Image.asset(
-                categories[index]['imageUrl'],
-                height: 200,
-                width: 250,
-              ),
-            ],
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) {
-          return const SizedBox(
-            width: 20,
-          );
-        },
-        itemCount: 3);
   }
 }
