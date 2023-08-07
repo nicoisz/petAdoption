@@ -76,6 +76,12 @@ class SideMenu extends StatelessWidget {
               print("press");
             },
           ),
+          const Expanded(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text('Bottom'),
+            ),
+          ),
         ],
       ),
     );

@@ -43,9 +43,9 @@ class SplashScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Elije tu mascota',
+                      'Bienvenido a Petta',
                       style:
-                          TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
                     Icon(
                       Icons.pets,
@@ -56,7 +56,7 @@ class SplashScreen extends StatelessWidget {
                 SizedBox(
                   height: 5,
                 ),
-                Text("Encuentra tu mejor futuro compañero")
+                Text("Encuentra de todo paraa tu mascota")
               ],
             ),
           ),
