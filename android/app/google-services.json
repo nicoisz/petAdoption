@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "430536845356",
+    "firebase_url": "https://petta-app-default-rtdb.firebaseio.com",
+    "project_id": "petta-app",
+    "storage_bucket": "petta-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430536845356:android:6d93842ea2cabb134a8989",
+        "android_client_info": {
+          "package_name": "com.example.petadoption"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430536845356-qcub7csvucbgdpt1g4roi3lhi5oi21iq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHK2etHLgN6b9V0OYzbDEJC9LZFE_O3fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430536845356-qcub7csvucbgdpt1g4roi3lhi5oi21iq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
