@@ -67,13 +67,15 @@ class SplashScreen extends StatelessWidget {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Container(
-            decoration: const BoxDecoration(
-              border: Border(
-                bottom: BorderSide(color: Colors.black),
-              ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'login');
+            },
+            child: const Text(
+              'Inicia Sesión',
+              style: TextStyle(
+                  decoration: TextDecoration.underline, color: Colors.black),
             ),
-            child: const Text('hechar un vistazo'),
           ),
           const SizedBox(
             width: 60,
@@ -89,17 +91,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-//flutterfire configure --project=petta-app
-/*
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-
-// ...
-
-await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
-*/

@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:petadoption/presentation/widgets/arc.dart';
-import 'package:petadoption/presentation/widgets/left_rectangle.dart';
 
 import '../widgets/bottom_navigation.dart';
 import '../widgets/oval.dart';

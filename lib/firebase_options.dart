@@ -8,12 +8,14 @@ import 'package:flutter/foundation.dart'
 ///
 /// Example:
 /// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
+//  import 'firebase_options.dart';
+// /// // ...
+// await Firebase.initializeApp(
+//    options: DefaultFirebaseOptions.currentPlatform,
+// );
 /// ```
+///
+
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -65,7 +67,8 @@ class DefaultFirebaseOptions {
     projectId: 'petta-app',
     databaseURL: 'https://petta-app-default-rtdb.firebaseio.com',
     storageBucket: 'petta-app.appspot.com',
-    iosClientId: '430536845356-dbpcagjobpcdj86lhhsd1a6459h5cdsd.apps.googleusercontent.com',
+    iosClientId:
+        '430536845356-dbpcagjobpcdj86lhhsd1a6459h5cdsd.apps.googleusercontent.com',
     iosBundleId: 'com.example.petadoption',
   );
 }
