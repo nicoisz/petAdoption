@@ -30,26 +30,6 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               children: [
                 CustomInputField(
-                  labelText: "Nombre",
-                  hintText: "nombre del usuario",
-                  inputType: TextInputType.name,
-                  formProperty: 'first_name',
-                  formValues: formValues,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomInputField(
-                  labelText: "Telefono",
-                  hintText: "telefono del usuario",
-                  inputType: TextInputType.phone,
-                  formProperty: 'phone_number',
-                  formValues: formValues,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                CustomInputField(
                   labelText: "Correo",
                   hintText: "correo del usuario",
                   inputType: TextInputType.emailAddress,
@@ -66,21 +46,6 @@ class LoginScreen extends StatelessWidget {
                   formProperty: 'password',
                   formValues: formValues,
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                DropdownButtonFormField(
-                    hint: const Text('tipo de usuario'),
-                    items: const [
-                      DropdownMenuItem(value: 'admin', child: Text("Admin")),
-                      DropdownMenuItem(value: 'editor', child: Text("editor")),
-                      DropdownMenuItem(
-                          value: 'read_only', child: Text("read-only")),
-                      DropdownMenuItem(value: 'User', child: Text('user'))
-                    ],
-                    onChanged: (value) {
-                      print(value);
-                    }),
                 const SizedBox(
                   height: 20,
                 ),
