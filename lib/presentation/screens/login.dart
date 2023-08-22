@@ -19,52 +19,47 @@ class LoginScreen extends StatelessWidget {
     };
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("input screen"),
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: Form(
-            key: myFormKey,
-            child: Column(
-              children: [
-                CustomInputField(
-                  labelText: "Correo",
-                  hintText: "correo del usuario",
-                  inputType: TextInputType.emailAddress,
-                  formProperty: 'email',
-                  formValues: formValues,
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 50,
+              ),
+              Transform.rotate(
+                alignment: Alignment.center,
+                angle: -75,
+                child: const Icon(
+                  Icons.pets,
+                  size: 80.0,
                 ),
-                const SizedBox(
-                  height: 20,
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Text(
+                'Welcome back you\'ve been missed!',
+                style: TextStyle(color: Colors.grey[700], fontSize: 16),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      enabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey.shade400),
+                      ),
+                      fillColor: Colors.grey.shade200,
+                      filled: true),
                 ),
-                CustomInputField(
-                  labelText: "Password",
-                  inputType: TextInputType.text,
-                  obscureText: true,
-                  formProperty: 'password',
-                  formValues: formValues,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      FocusScope.of(context).requestFocus(FocusNode());
-
-                      if (!myFormKey.currentState!.validate()) {
-                        print('formulario no valido');
-                        return;
-                      }
-
-                      print(formValues);
-                    },
-                    child: const Center(
-                      child: Text("Enviar"),
-                    ))
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
