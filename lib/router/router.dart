@@ -29,7 +29,7 @@ class AppRoutes {
         route: 'login',
         icon: Icons.person_2,
         name: 'login',
-        screen: const LoginScreen()),
+        screen: LoginScreen()),
     MenuOptions(
         route: 'register',
         icon: Icons.person_2,
@@ -54,7 +54,7 @@ class AppRoutes {
     'detail': (BuildContext context) => const DetailScreen(
           pets: {},
         ),
-    'login': (BuildContext context) => const LoginScreen(),
+    'login': (BuildContext context) => LoginScreen(),
     'register': (BuildContext context) => const RegisterScreen(),
   };
 

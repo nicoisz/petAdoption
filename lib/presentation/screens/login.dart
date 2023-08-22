@@ -1,10 +1,20 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:petadoption/main.dart';
+import 'package:petadoption/presentation/widgets/custom_button_login.dart';
 import 'package:petadoption/presentation/widgets/custom_imput_field.dart';
+import 'package:petadoption/presentation/widgets/custom_login_input_field.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
+
+  //text editing controller
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  //sign in method
+  void signUser() {}
 
   @override
   Widget build(BuildContext context) {
@@ -43,22 +53,104 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.grey[700], fontSize: 16),
               ),
               const SizedBox(
+                height: 40,
+              ),
+              InputLoginField(
+                hintText: 'Username',
+                controller: usernameController,
+                obscureText: false,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              InputLoginField(
+                hintText: 'Password',
+                controller: passwordController,
+                obscureText: true,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: Text(
+                      'Forgot Password',
+                      style: TextStyle(color: Colors.grey[600]),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              LoginButton(
+                ontap: signUser,
+              ),
+              const SizedBox(
                 height: 50,
               ),
               Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade400),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        "or continue with",
+                        style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                       ),
-                      fillColor: Colors.grey.shade200,
-                      filled: true),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(16),
+                      color: Colors.grey[200],
+                    ),
+                    child: const Icon(
+                      Icons.facebook,
+                      size: 50,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white),
+                      borderRadius: BorderRadius.circular(16),
+                      color: Colors.grey[200],
+                    ),
+                    child: const Icon(
+                      Icons.g_mobiledata,
+                      size: 50,
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),
