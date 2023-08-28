@@ -1,33 +1,35 @@
-import 'dart:ffi';
-
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:petadoption/main.dart';
-import 'package:petadoption/presentation/widgets/custom_button_login.dart';
-import 'package:petadoption/presentation/widgets/custom_imput_field.dart';
+import 'package:petadoption/presentation/screens/vm/login_controller.dart';
+import 'package:petadoption/presentation/screens/vm/login_state.dart';
 import 'package:petadoption/presentation/widgets/custom_login_input_field.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulHookConsumerWidget {
   LoginScreen({super.key});
 
+  @override
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   //text editing controller
   final usernameController = TextEditingController();
+
   final passwordController = TextEditingController();
 
   //sign in method
-  void signUser() {}
+  void signUser(TextEditingController usernameController,
+      TextEditingController passwordController) {}
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> myFormKey = GlobalKey<FormState>();
-
-    final Map<String, String> formValues = {
-      'first_name': 'Nicolas',
-      'phone_number': '6549841',
-      'email': 'nic@google.com',
-      'password': '123456',
-      'role': 'admin'
-    };
-
+    ref.listen<LoginState>(loginControllerProvider, (previous, state) {
+      if (state is LoginStateError) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(state.error),
+        ));
+      }
+    });
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SafeArea(
@@ -86,8 +88,28 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              LoginButton(
-                ontap: signUser,
+              GestureDetector(
+                onTap: () {
+                  ref
+                      .read(loginControllerProvider.notifier)
+                      .login(usernameController.text, passwordController.text);
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(25),
+                  margin: const EdgeInsets.symmetric(horizontal: 25),
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: const Center(
+                    child: Text(
+                      "Sign In",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 50,

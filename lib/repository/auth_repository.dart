@@ -15,10 +15,10 @@ class AuthRepository {
       return result.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        throw AuthException('user-not-found');
+        throw AuthException('user not found');
       }
       if (e.code == 'wrong-password') {
-        throw AuthException('wrong-password');
+        throw AuthException('wrong password');
       } else {
         throw AuthException('An error occured. Please try again');
       }

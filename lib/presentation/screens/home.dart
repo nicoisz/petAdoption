@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:petadoption/presentation/screens/screens.dart';
 import 'package:petadoption/presentation/widgets/circle_button.dart';
 
 import '../widgets/bottom_navigation.dart';
