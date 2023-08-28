@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:petadoption/presentation/screens/vm/login_controller.dart';
 
+import '../../providers/auth_provider.dart';
+
 class SideMenu extends HookConsumerWidget {
   const SideMenu({
     super.key,
@@ -74,7 +76,7 @@ class SideMenu extends HookConsumerWidget {
               Icons.arrow_forward_ios_rounded,
               size: 14,
             ),
-            onLongPress: () {
+            onTap: () {
               ref.read(loginControllerProvider.notifier).signOut();
             },
           ),
@@ -85,6 +87,19 @@ class SideMenu extends HookConsumerWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class LoadingScreen extends StatelessWidget {
+  const LoadingScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }

@@ -64,27 +64,14 @@ class SplashScreen extends StatelessWidget {
       ),
       backgroundColor: const Color(0xFFb1e0da),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: Row(
+      floatingActionButton: const Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, 'login');
-            },
-            child: const Text(
-              'Inicia Sesión',
-              style: TextStyle(
-                  decoration: TextDecoration.underline, color: Colors.black),
-            ),
-          ),
-          const SizedBox(
-            width: 60,
-          ),
-          const CircleButton(
+          CircleButton(
             iconData: Icons.pets,
             buttonText: 'Comenzar',
             backgroundColor: Colors.white,
-            route: 'home',
+            route: 'login',
           )
         ],
       ),

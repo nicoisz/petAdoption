@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:petadoption/firebase_options.dart';
+import 'package:petadoption/presentation/screens/auth_checker.dart';
 import 'package:petadoption/router/router.dart';
 
 Future<void> main() async {
@@ -21,7 +22,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: const Listview2Screen(),
-        initialRoute: 'splash',
+        home: const AuthChecker(),
         theme: ThemeData(
           scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
           primarySwatch: Colors.blue,
