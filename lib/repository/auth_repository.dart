@@ -5,11 +5,24 @@ class AuthRepository {
 
   final FirebaseAuth _auth;
 
+  Stream<User?> get authStateChange => _auth.idTokenChanges();
+
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
-    final result = await _auth.signInWithEmailAndPassword(
-        email: email, password: password);
-    return result.user;
+    try {
+      final result = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      return result.user;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        throw AuthException('user-not-found');
+      }
+      if (e.code == 'wrong-password') {
+        throw AuthException('wrong-password');
+      } else {
+        throw AuthException('An error occured. Please try again');
+      }
+    }
   }
 
   Future<void> signOut() async {
