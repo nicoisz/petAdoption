@@ -5,7 +5,7 @@ import 'package:petadoption/presentation/screens/vm/login_state.dart';
 import 'package:petadoption/presentation/widgets/custom_login_input_field.dart';
 
 class LoginScreen extends StatefulHookConsumerWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
