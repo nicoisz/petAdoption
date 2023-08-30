@@ -27,25 +27,22 @@ class CustomInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: obscureText,
-      autofocus: true,
-      textCapitalization: TextCapitalization.words,
-      keyboardType: inputType,
-      onChanged: (value) => formValues[formProperty] = value,
-      validator: (value) {
-        if (value == null) return 'Este campo es requerido';
-        if (value.length < 5) return 'ingresar minimo de 5 letras';
-        return null;
-      },
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      decoration: InputDecoration(
-        hintText: hintText,
-        labelText: labelText,
-        helperText: helperText,
-        suffixIcon: suffixIcon == null ? null : Icon(suffixIcon),
-        //prefixIcon: Icon(Icons.abc_outlined),
-        icon: icon == null ? null : Icon(icon),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      child: TextFormField(
+        obscureText: obscureText,
+        autofocus: true,
+        textCapitalization: TextCapitalization.words,
+        keyboardType: inputType,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        decoration: InputDecoration(
+          hintText: hintText,
+          labelText: labelText,
+          helperText: helperText,
+          suffixIcon: suffixIcon == null ? null : Icon(suffixIcon),
+          //prefixIcon: Icon(Icons.abc_outlined),
+          icon: icon == null ? null : Icon(icon),
+        ),
       ),
     );
   }
