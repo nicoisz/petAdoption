@@ -1,17 +1,14 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:petadoption/presentation/screens/vm/login_controller.dart';
-import 'package:petadoption/presentation/screens/vm/login_state.dart';
 import 'package:petadoption/presentation/widgets/custom_login_input_field.dart';
 
-class LoginScreen extends StatefulHookConsumerWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  ConsumerState<LoginScreen> createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends ConsumerState<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   //text editing controller
   final usernameController = TextEditingController();
 
@@ -23,13 +20,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ref.listen<LoginState>(loginControllerProvider, (previous, state) {
-      if (state is LoginStateError) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(state.error),
-        ));
-      }
-    });
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SafeArea(
@@ -74,8 +64,18 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 height: 20,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, 'signUp'),
+                      child: Text(
+                        'Sign Up',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Text(
@@ -90,9 +90,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  ref
-                      .read(loginControllerProvider.notifier)
-                      .login(usernameController.text, passwordController.text);
+                  Navigator.pushNamed(context, 'home');
                 },
                 child: Container(
                   padding: const EdgeInsets.all(25),

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:petadoption/presentation/screens/vm/login_controller.dart';
 
-import '../../providers/auth_provider.dart';
-
-class SideMenu extends HookConsumerWidget {
+class SideMenu extends StatelessWidget {
   const SideMenu({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: <Widget>[
@@ -77,7 +73,7 @@ class SideMenu extends HookConsumerWidget {
               size: 14,
             ),
             onTap: () {
-              ref.read(loginControllerProvider.notifier).signOut();
+              Navigator.pushNamed(context, 'login');
             },
           ),
           const Expanded(

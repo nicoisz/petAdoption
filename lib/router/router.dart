@@ -29,12 +29,17 @@ class AppRoutes {
         route: 'login',
         icon: Icons.person_2,
         name: 'login',
-        screen: LoginScreen()),
+        screen: const LoginScreen()),
     MenuOptions(
         route: 'register',
         icon: Icons.person_2,
         name: 'register',
-        screen: const RegisterScreen())
+        screen: const RegisterScreen()),
+    MenuOptions(
+        route: 'signUp',
+        icon: Icons.person_2,
+        name: 'signUp',
+        screen: const SignUpScreen())
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
@@ -54,8 +59,9 @@ class AppRoutes {
     'detail': (BuildContext context) => const DetailScreen(
           pets: {},
         ),
-    'login': (BuildContext context) => LoginScreen(),
+    'login': (BuildContext context) => const LoginScreen(),
     'register': (BuildContext context) => const RegisterScreen(),
+    'signUp': (BuildContext context) => const SignUpScreen(),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

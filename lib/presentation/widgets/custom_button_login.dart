@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:petadoption/presentation/screens/vm/login_controller.dart';
 
 class LoginButton extends StatefulHookConsumerWidget {
   LoginButton({super.key, required String password, required String username});
