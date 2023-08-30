@@ -31,11 +31,6 @@ class AppRoutes {
         name: 'login',
         screen: const LoginScreen()),
     MenuOptions(
-        route: 'register',
-        icon: Icons.person_2,
-        name: 'register',
-        screen: const RegisterScreen()),
-    MenuOptions(
         route: 'signUp',
         icon: Icons.person_2,
         name: 'signUp',
@@ -60,7 +55,6 @@ class AppRoutes {
           pets: {},
         ),
     'login': (BuildContext context) => const LoginScreen(),
-    'register': (BuildContext context) => const RegisterScreen(),
     'signUp': (BuildContext context) => const SignUpScreen(),
   };
 
